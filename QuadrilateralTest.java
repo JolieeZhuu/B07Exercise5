@@ -1,34 +1,66 @@
 package exercise5;
 
-public class Quadrilateral {
-    Point[] p;
+import static org.junit.jupiter.api.Assertions.*;
 
-    Quadrilateral(Point p1, Point p2, Point p3, Point p4){
-        p = {p1, p2, p3, p4};   
+import org.junit.jupiter.api.Test;
+
+public class QuadrilateralTest {
+     @Test
+    void testAreaOfRectangle() {
+        Point p1 = new Point(0, 0);
+        Point p2 = new Point(3, 0);
+        Point p3 = new Point(3, 5);
+        Point p4 = new Point(0, 5);
+        Quadrilateral q = new Quadrilateral(p1, p2, p3, p4);
+        assertEquals(15.0, q.area(),0.001);
+    }
+    @Test
+    void testAreaOfSquare() {
+        Point p1 = new Point(0, 0);
+        Point p2 = new Point(3, 0);
+        Point p3 = new Point(3, 3);
+        Point p4 = new Point(0, 3);
+        Quadrilateral q = new Quadrilateral(p1, p2, p3, p4);
+        assertEquals(9, q.area(),0.001);
     }
 
-    Quadrilateral(Point[4] p_arr){
-        p = p_arr;
+    @Test
+    void testAreaOfNonRectangle() {
+        Point p1 = new Point(0, 0);
+        Point p2 = new Point(4, 0);
+        Point p3 = new Point(3, 2);
+        Point p4 = new Point(0, 2);
+        Quadrilateral q = new Quadrilateral(p1, p2, p3, p4);
+        assertEquals(7.0, q.area(), 0.001);
     }
 
-    double p_mult(Point p1, p2){
-        return (p1.x * p2.y - p2.x * p1.y);
+
+    void testPerimeterOfRectangle() {
+        Point p1 = new Point(0, 0);
+        Point p2 = new Point(3, 0);
+        Point p3 = new Point(3, 5);
+        Point p4 = new Point(0, 5);
+        Quadrilateral q = new Quadrilateral(p1, p2, p3, p4);
+        assertEquals(16.0, q.perimeter(),0.001);
+    }
+    @Test
+    void testPerimeterOfSquare() {
+        Point p1 = new Point(0, 0);
+        Point p2 = new Point(3, 0);
+        Point p3 = new Point(3, 3);
+        Point p4 = new Point(0, 3);
+        Quadrilateral q = new Quadrilateral(p1, p2, p3, p4);
+        assertEquals(12.0, q.perimeter(),0.001);
     }
 
-    double area(){
-        // Implements shoelace formula.
-        double area = 0;
-        for (int i = 0; i < 4; ++i){
-            area += p_mult(p[i], p[(i + 1) % 4]);
-        }
-        return area;
+    @Test
+    void testPerimeterOfNonRectangle() {
+        Point p1 = new Point(1, 3);
+        Point p2 = new Point(2, 4);
+        Point p3 = new Point(4, 7);
+        Point p4 = new Point(5, 8);
+        Quadrilateral q = new Quadrilateral(p1, p2, p3, p4);
+        assertEquals(12.84, q.perimeter(), 0.01);
     }
-
-    double perimeter(){
-        double perimeter = 0;
-        for (int i = 0; i < 4; ++i){
-            perimeter += p[i].distance(p[(i + 1) % 4]);
-        }
-        return perimeter;
-    }
+   
 }
