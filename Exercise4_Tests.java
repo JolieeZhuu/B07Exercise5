@@ -2,6 +2,8 @@ package exercise4;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.beans.Transient;
+
 import org.junit.jupiter.api.Test;
 
 class Exercise4_Tests {
@@ -92,4 +94,32 @@ class Exercise4_Tests {
 		t.C = p3;
 		assertFalse(t.isEquilateral());
 	}
+
+	// Testing Pentagon class
+	Point pp1 = new Point(0,0);
+	Point pp2 = new Point(2,0);
+	Point pp3 = new Point(3,2);
+	Point pp4 = new Point(1,4);
+	Point pp5 = new Point(-1,2);
+
+	Pentagon pent = new Pentagon(pp1, pp2, pp3, pp4, pp5);
+
+	@Test
+	void test_perimeter_pentagon(){ 
+		assertRquals(2 + 2*Math.sqrt(5)+2*Math.sqrt(8),pent.perimeter());
+	}
+
+	@Test
+	void test_irregular_area(){ 
+		assertEquals(-1,pent.area());
+	}
+
+	@Test
+	void test_isregular_false(){
+		assertFalse(pent.isRegular());
+	}
+
+
+
+
 }
