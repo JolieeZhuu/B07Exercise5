@@ -26,10 +26,10 @@ public class Pentagon {
     public double area() {
         if (!isRegular()) return -1;
         double s = p[0].distance(p[1]);
-        return 0.25 * Math.sqrt(5*(5+2*Math.sqrt(5)))* s * s;
+        return 0.25 * Math.sqrt(5 * (5 + 2 * Math.sqrt(5))) * s * s;
     }
     
     public double perimeter() {
-        return p[0].distance(p[1]) + p[1].distance(p[2]) +p[2].distance(p[3]) + p[3].distance(p[4]) + p[4].distance(p[0]);
+        return p[0].distance(p[1]) + p[1].distance(p[2]) + p[2].distance(p[3]) + p[3].distance(p[4]) + p[4].distance(p[0]);
     }
 }
