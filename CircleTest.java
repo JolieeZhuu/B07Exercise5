@@ -1,3 +1,12 @@
+/*
+ * Circle test
+ * 
+ * 1.0
+ *
+ * Jul 16
+ * 
+ * Apache 3.0 license
+ */
 package exercise4;
 
 import static org.junit.jupiter.api.Assertions.*;

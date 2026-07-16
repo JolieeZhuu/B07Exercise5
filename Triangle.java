@@ -1,3 +1,13 @@
+/*
+ * Triangle
+ * 
+ * 1.0
+ *
+ * Jul 16
+ * 
+ * Apache 3.0 license
+ */
+
 package exercise5;
 
 public class Triangle {
@@ -19,9 +29,11 @@ public class Triangle {
 		double dAB = A.distance(B);
 		double dBC = B.distance(C);
 		double dCA = C.distance(A);
-		if(dAB==dBC && dBC==dCA)
+		if(dAB==dBC && dBC==dCA) {
 			return true;
-		else
+		}
+		else {
 			return false;
+		}
 	}
 }

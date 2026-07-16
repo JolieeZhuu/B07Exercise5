@@ -1,3 +1,14 @@
+/*
+
+ * Circle
+ * 
+ * 1.0
+ *
+ * Jul 16
+ * 
+ * Apache 3.0 license
+ */
+
 package exercise4;
 
 public class Circle {

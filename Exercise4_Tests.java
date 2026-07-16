@@ -1,3 +1,13 @@
+/*
+ * Test suite
+ * 
+ * 1.0
+ *
+ * Jul 16
+ * 
+ * Apache 3.0 license
+ */
+
 package exercise4;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -6,10 +16,14 @@ import java.beans.Transient;
 
 import org.junit.jupiter.api.Test;
 
+import exercise5.Point;
+import exercise5.Triangle;
+
 class Exercise4_Tests {
 
-	// Testing Point Class
-	
+	/** 
+	 * Testing point class.
+	 */
 	Point p0 = new Point(0, 0);
 	Point p1 = new Point(Math.sqrt(5), 0);
 	Point p2 = new Point(Math.sqrt(5)/2, Math.sqrt(15)/2);
@@ -61,10 +75,7 @@ class Exercise4_Tests {
 		assertFalse(p0.equals(p3));
 	}
 	
-	
-	// Testing triangle class
-	
-	Triangle t = new Triangle(p0, p1, p2);
+	Triangle t = new Triangle(p0, p1, p2); // Testing triangle class
 	
 	@Test
 	void test_consA() {
@@ -95,7 +106,9 @@ class Exercise4_Tests {
 		assertFalse(t.isEquilateral());
 	}
 
-	// Testing Pentagon class
+	/** Testing Pentagon class 
+	 * 
+	*/
 	Point pp1 = new Point(0,0);
 	Point pp2 = new Point(2,0);
 	Point pp3 = new Point(3,2);

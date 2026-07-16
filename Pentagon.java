@@ -1,3 +1,12 @@
+/*
+ * Pentagon Class
+ * 
+ * 1.0
+ *
+ * Jul 16
+ * 
+ * Apache 3.0 license
+ */
 package exercise4;
 public class Pentagon {
     Point[] p;
@@ -20,16 +29,21 @@ public class Pentagon {
         double diagonal4 = p[3].distance(p[0]);
         double diagonal5 = p[4].distance(p[1]);
 
-        return Math.abs(side1 - side2) < e && Math.abs(side2 - side3) < e && Math.abs(side3 - side4) < e && Math.abs(side4 - side5) < e && Math.abs(diagonal1 - diagonal2) < e && Math.abs(diagonal2 - diagonal3) < e && Math.abs(diagonal3 - diagonal4) < e && Math.abs(diagonal4 - diagonal5) < e;
+        return (Math.abs(side1 - side2) < e && Math.abs(side2 - side3) < e &&
+                Math.abs(side3 - side4) < e && Math.abs(side4 - side5) < e && 
+                Math.abs(diagonal1 - diagonal2) < e && Math.abs(diagonal2 - diagonal3) < e && 
+                Math.abs(diagonal3 - diagonal4) < e && Math.abs(diagonal4 - diagonal5) < e) ;
     }
     
     public double area() {
-        if (!isRegular()) return -1;
+        if (!isRegular()) {return -1;
+        }
         double s = p[0].distance(p[1]);
         return 0.25 * Math.sqrt(5 * (5 + 2 * Math.sqrt(5))) * s * s;
     }
     
     public double perimeter() {
-        return p[0].distance(p[1]) + p[1].distance(p[2]) + p[2].distance(p[3]) + p[3].distance(p[4]) + p[4].distance(p[0]);
+        return (p[0].distance(p[1]) + p[1].distance(p[2]) 
+                + p[2].distance(p[3]) + p[3].distance(p[4]) + p[4].distance(p[0]));
     }
 }

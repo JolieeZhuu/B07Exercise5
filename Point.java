@@ -1,3 +1,12 @@
+/*
+ * Point class
+ * 
+ * 1.0
+ *
+ * Jul 16
+ * 
+ * Apache 3.0 license
+ */
 package exercise5;
 
 public class Point {
