@@ -1,39 +1,8 @@
-public class Book {
-	String isbn;
+public abstract class Book {
+    String isbn;
 	String title;
-	double length;
-	double width;
-	double height;
-	
-	public Book(String isbn, String title, double length, double width, double height) {
-		this.isbn = isbn;
-		this.title = title;
-		this.length = length;
-		this.width = width;
-		this.height = height;
-	}
 
-	public double getLength() {
-		return length;
-	}
-
-	public double getHeight() {
-		return height;
-	}
-
-	public double getWidth() {
-		return width;
-	}
-
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((isbn == null) ? 0 : isbn.hashCode());
-		return result;
-	}
-
-	@Override
+    @Override
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
@@ -49,9 +18,17 @@ public class Book {
 			return false;
 		return true;
 	}
-
-	@Override
+    
+    @Override
 	public String toString() {
 		return title;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((isbn == null) ? 0 : isbn.hashCode());
+		return result;
 	}
 }

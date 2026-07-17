@@ -1,9 +1,9 @@
-public class GroceryItem {
-	String id;
-	String name;
+public class GroceryItem implements Physical{
 	double length;
 	double width;
 	double height;
+	String id;
+	String name;
 	
 	public GroceryItem(String id, String name, double length, double width, double height) {
 		this.id = id;
@@ -13,7 +13,7 @@ public class GroceryItem {
 		this.height = height;
 	}
 
-	public double getLength() {
+    public double getLength() {
 		return length;
 	}
 
@@ -23,6 +23,22 @@ public class GroceryItem {
 
 	public double getWidth() {
 		return width;
+	}
+
+	public String determineBoxSize() {
+		double max = length;
+		if(max < width)
+			max = width;
+		if(max < height)
+			max = height;
+		if(max < 10)
+			return "small";
+		else if(max < 20)
+			return "medium";
+		else if(max < 30)
+			return "large";
+		else
+			return "x-large";
 	}
 
 	@Override
